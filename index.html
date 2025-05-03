@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Putar Audio</title>
+</head>
+<body>
+
+  <h2>Putar Audio dari GitHub</h2>
+
+  <button onclick="playAudio('audio1')">Putar Audio 1</button>
+  <button onclick="playAudio('audio2')">Putar Audio 2</button>
+
+  <audio id="audio1" src="https://irwanzanur.github.io/Audio/audio.mp3"></audio>
+  <audio id="audio2" src="https://irwanzanur.github.io/Audio/Audio_2.mp3"></audio>
+
+  <script>
+    function playAudio(id) {
+      const audios = document.querySelectorAll("audio");
+      audios.forEach(audio => {
+        if (audio.id === id) {
+          audio.play();
+        } else {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
