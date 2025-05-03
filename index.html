@@ -2,17 +2,63 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Putar Audio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemutar Audio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f0f2f5, #dfe9f3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357abd;
+    }
+  </style>
 </head>
 <body>
 
-  <h2>Putar Audio Hiburan</h2>
+  <div class="container">
+    <h2>Pemutar Audio</h2>
+    <button onclick="playAudio('audio1')">Putar Audio 1</button>
+    <button onclick="playAudio('audio2')">Putar Audio 2</button>
 
-  <button onclick="playAudio('audio1')">Putar Audio 1</button>
-  <button onclick="playAudio('audio2')">Putar Audio 2</button>
-
-  <audio id="audio1" src="https://irwanzanur.github.io/Audio/audio.mp3"></audio>
-  <audio id="audio2" src="https://irwanzanur.github.io/Audio/Audio_2.mp3"></audio>
+    <audio id="audio1" src="https://irwanzanur.github.io/Audio/audio.mp3"></audio>
+    <audio id="audio2" src="https://irwanzanur.github.io/Audio/Audio_2.mp3"></audio>
+  </div>
 
   <script>
     function playAudio(id) {
