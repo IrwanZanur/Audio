@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pemutar Audio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -13,7 +14,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      font-size: 8px; /* Ukuran font kecil */
+      font-size: 8px;
     }
 
     .container {
@@ -32,12 +33,17 @@
       color: #333;
     }
 
+    .audio-controls {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
     button {
-      display: block;
-      width: 100%;
-      padding: 6px 8px;
-      margin: 6px 0;
-      font-size: 10px;
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
       background-color: #4a90e2;
       color: white;
       border: none;
@@ -49,15 +55,31 @@
     button:hover {
       background-color: #357abd;
     }
+
+    i {
+      margin-right: 4px;
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <h2>Hiburan</h2>
-    <button onclick="playAudio('audio1')">Putar Audio 1</button>
-    <button onclick="playAudio('audio2')">Putar Audio 2</button>
-    <button onclick="playAudio('audio3')">Putar Audio 3</button>
+
+    <div class="audio-controls">
+      <button onclick="playAudio('audio1')"><i class="fas fa-play"></i>1</button>
+      <button onclick="pauseAudio('audio1')"><i class="fas fa-pause"></i>1</button>
+    </div>
+
+    <div class="audio-controls">
+      <button onclick="playAudio('audio2')"><i class="fas fa-play"></i>2</button>
+      <button onclick="pauseAudio('audio2')"><i class="fas fa-pause"></i>2</button>
+    </div>
+
+    <div class="audio-controls">
+      <button onclick="playAudio('audio3')"><i class="fas fa-play"></i>3</button>
+      <button onclick="pauseAudio('audio3')"><i class="fas fa-pause"></i>3</button>
+    </div>
 
     <audio id="audio1" src="https://irwanzanur.github.io/Audio/audio.mp3"></audio>
     <audio id="audio2" src="https://irwanzanur.github.io/Audio/Audio_2.mp3"></audio>
@@ -76,9 +98,17 @@
         }
       });
     }
+
+    function pauseAudio(id) {
+      const audio = document.getElementById(id);
+      if (audio) {
+        audio.pause();
+      }
+    }
   </script>
 
 </body>
 </html>
+
 
 
